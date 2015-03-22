@@ -1,0 +1,53 @@
+newmtl ColumnStones
+d 1
+Ns 0.9875
+Ni 0
+Ka 0 0 0
+Kd 0.8 0.8 0.8
+Ks 0.6 0.6 0.6
+Km 0.0024
+map_Kd /Maps/sjrStones.jpg
+
+newmtl ColumnCaps
+d 1
+Ns 0.983333
+Ni 0
+Ka 0 0 0
+Kd 0.8 0.8 0.8
+Ks 0.6 0.6 0.6
+Km 0.02
+map_Kd /Maps/sjrcaps.jpg
+
+newmtl Grout
+d 1
+Ns 0.9875
+Ni 0
+Ka 0 0 0
+Kd 0.8 0.8 0.8
+Ks 0.6 0.6 0.6
+Km 0.0024
+map_Kd /Maps/jrGrout.jpg
+map_Bump /Maps/jrGrout.jpg
+
+newmtl IvyBranch
+d 1
+Ns 0.95
+Ni 0
+Ka 0 0 0
+Kd 0.8 0.8 0.8
+Ks 0.6 0.6 0.6
+Km 0.02
+map_Kd /Maps/sjrBranch.jpg
+
+newmtl Leaf_1
+d 1
+Ns 0.975
+Ni 0
+Ka 0 0 0
+Kd 0.8 0.8 0.8
+Ks 0.6 0.6 0.6
+Km 0.002
+map_Kd /Maps/sjrIvy2.jpg
+map_D /Maps/sjrIvyA.jpg
+map_Bump /Maps/sjrIvy2.jpg
+
