@@ -599,6 +599,33 @@ Camera:
   m_PrefabParentObject: {fileID: 2000000, guid: 5e9e851c0e142814dac026a256ba2ac0,
     type: 2}
   m_PrefabInternal: {fileID: 1186245445}
+--- !u!114 &872951695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 872951692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a970acddb8696a4792ca6e022840a0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NoiseTexture: {fileID: 0}
+  Samples: 0
+  Downsampling: 1
+  Radius: .730000019
+  Intensity: 2.0999999
+  Distance: .25
+  Bias: .100000001
+  LumContribution: .699999988
+  OcclusionColor: {r: 0, g: 0, b: 0, a: 1}
+  CutoffEnabled: 0
+  CutoffDistance: 500
+  CutoffFalloff: 75
+  Blur: 1
+  BlurDownsampling: 0
+  DebugAO: 0
+  Shader: {fileID: 4800000, guid: 8aa7caa29893e3843ad6f6fd3f58fcfb, type: 3}
 --- !u!114 &872951696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -710,7 +737,7 @@ MonoBehaviour:
   intensity: 1.17999995
   chromaticAberration: 3.5
   axialAberration: 72.5
-  blur: 0
+  blur: -4.98000002
   blurSpread: 1.20000005
   luminanceDependency: .00100000005
   blurDistance: 5
@@ -735,6 +762,13 @@ MonoBehaviour:
   blurIterations: 1
   blurType: 0
   fastBloomShader: {fileID: 4800000, guid: 68a00c837b82e4c6d92e7da765dc5f1d, type: 3}
+--- !u!124 &872951702
+Behaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 872951692}
+  m_Enabled: 1
 --- !u!1 &947943259
 GameObject:
   m_ObjectHideFlags: 0
@@ -833,15 +867,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 137.699997
+      value: 118.5
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 24.8999996
+      value: 26.1499996
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 138.100006
+      value: 152.300003
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
       propertyPath: m_LocalRotation.x
@@ -849,7 +883,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: .541739106
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
       propertyPath: m_LocalRotation.z
@@ -857,7 +891,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: .840546727
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
       propertyPath: m_RootOrder
@@ -917,6 +951,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
       propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2000000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
+      propertyPath: m_OcclusionCulling
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
@@ -1526,7 +1564,7 @@ GameObject:
   - 4: {fileID: 2021887762}
   - 108: {fileID: 2021887761}
   m_Layer: 0
-  m_Name: Directional Light
+  m_Name: Sun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1542,7 +1580,7 @@ Light:
   serializedVersion: 6
   m_Type: 1
   m_Color: {r: 1, g: .885581076, b: .573529422, a: 1}
-  m_Intensity: .99000001
+  m_Intensity: 1.25
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -1554,7 +1592,7 @@ Light:
     m_NormalBias: .769999981
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
-  m_Flare: {fileID: 12100000, guid: 54fbbf098d116effa00081aba8ad6659, type: 2}
+  m_Flare: {fileID: 12100000, guid: 29448ba5a39814955bf076b95bffcada, type: 2}
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
@@ -1570,7 +1608,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2021887760}
-  m_LocalRotation: {x: .11388199, y: -.78758508, z: .369765908, w: .479597688}
+  m_LocalRotation: {x: .130915895, y: -.856392384, z: .318562806, w: .384670019}
   m_LocalPosition: {x: 460, y: 388, z: 663}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
