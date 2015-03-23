@@ -95,6 +95,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_AudioSource.clip = m_LandSound;
             m_AudioSource.Play();
             m_NextStep = m_StepCycle + .5f;
+            m_dustEmitter.Emit(m_EmittedDustParticlesByStep * 5);
         }
 
 
@@ -181,7 +182,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_FootstepSounds[0] = m_AudioSource.clip;
 
 			m_footprints.AddFootprint( transform.position, transform.forward, transform.right );
-            m_dustEmitter.Emit(m_EmittedDustParticlesByStep);
+            m_dustEmitter.Emit(m_IsWalking ? m_EmittedDustParticlesByStep : m_EmittedDustParticlesByStep * 2);
         }
 
 
