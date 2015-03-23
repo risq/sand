@@ -27,6 +27,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField] private AudioClip[] m_FootstepSounds;    // an array of footstep sounds that will be randomly selected from.
         [SerializeField] private AudioClip m_JumpSound;           // the sound played when character leaves the ground.
         [SerializeField] private AudioClip m_LandSound;           // the sound played when character touches back on ground.
+        [SerializeField] private GameObject m_dustEmitterObject;
+        [SerializeField] private int m_EmittedDustParticlesByStep = 5;
 
         private Camera m_Camera;
         private bool m_Jump;
@@ -42,6 +44,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private bool m_Jumping;
         private AudioSource m_AudioSource;
 		private Footprints m_footprints;
+        private ParticleSystem m_dustEmitter;
 
         // Use this for initialization
         private void Start()
@@ -57,6 +60,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
 			m_footprints = GameObject.Find( "Footprints" ).GetComponent<Footprints>();
+            m_dustEmitter = m_dustEmitterObject.GetComponent<ParticleSystem>();
         }
 
 
@@ -177,6 +181,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_FootstepSounds[0] = m_AudioSource.clip;
 
 			m_footprints.AddFootprint( transform.position, transform.forward, transform.right );
+            m_dustEmitter.Emit(m_EmittedDustParticlesByStep);
         }
 
 
