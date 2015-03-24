@@ -15,7 +15,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         private void Start()
         {
             // get the components on the object we need ( should not be null due to require component so no need to check )
-            agent = GetComponentInChildren<NavMeshAgent>();
+            agent = GetComponent<NavMeshAgent>();
+            Debug.Log(agent);
             character = GetComponent<ThirdPersonCharacter>();
 
 	        agent.updateRotation = false;
